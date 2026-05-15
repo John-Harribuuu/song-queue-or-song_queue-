@@ -4,34 +4,28 @@
 
 int main() {
 
-    // Seed the random number generator
-    // so every program run produces different random numbers
+  
     srand(time(NULL));
 
-    // Size of the array
+
     int n = 10;
 
-    // Array that will store random numbers
+ 
     int nums[10];
 
-    // Variables used for analysis/tracking
     int comparisons = 0;   // Counts comparisons made
     int assignments = 0;   // Counts assignment operations
     int swaps = 0;         // Counts how many swaps happen
     int step = 0;          // Counts sorting steps
 
-    // =====================================================
-    // GENERATE RANDOM NUMBERS
-    // =====================================================
+ 
 
     // Fill the array with random numbers from 1 to 99
     for (int i = 0; i < n; i++) {
         nums[i] = rand() % 99 + 1;
     }
 
-    // =====================================================
-    // DISPLAY INITIAL ARRAY
-    // =====================================================
+   
 
     printf("=== CUSTOM SORTING ANALYSIS ===\n\n");
 
@@ -43,27 +37,23 @@ int main() {
 
     printf("]\n\n--- SORTING PROGRESS ---\n\n");
 
-    // =====================================================
-    // BUBBLE SORT WITH ANALYSIS
-    // =====================================================
 
-    // Outer loop controls how many passes are made
+
     for (int i = 0; i < n - 1; i++) {
 
-        // Count loop comparison
+       
         comparisons++;
 
-        // Inner loop compares adjacent elements
+     
         for (int j = 0; j < n - i - 1; j++) {
 
-            // Count inner loop comparison
+       
             comparisons++;
 
-            // Count the IF condition comparison
+          
             comparisons++;
 
-            // Check if current element is greater
-            // than the next element
+          
             if (nums[j] > nums[j + 1]) {
 
                 step++;
@@ -75,26 +65,24 @@ int main() {
                     nums[j + 1]
                 );
 
-                // =====================================================
-                // SWAP PROCESS
-                // =====================================================
+             
 
-                // Store current value temporarily
+              
                 int temp = nums[j];
                 assignments++;
 
-                // Move smaller value to the left
+              
                 nums[j] = nums[j + 1];
                 assignments++;
 
-                // Put stored value to the right
+              
                 nums[j + 1] = temp;
                 assignments++;
 
-                // Count total swaps
+            
                 swaps++;
 
-                // Display current array status
+              
                 printf("Current: [ ");
 
                 for (int k = 0; k < n; k++) {
@@ -105,7 +93,7 @@ int main() {
 
             } else {
 
-                // If numbers are already in correct order
+            
                 step++;
 
                 printf(
@@ -115,7 +103,7 @@ int main() {
                     nums[j + 1]
                 );
 
-                // Display current array status
+              
                 printf("Current: [ ");
 
                 for (int k = 0; k < n; k++) {
@@ -127,9 +115,7 @@ int main() {
         }
     }
 
-    // =====================================================
-    // DISPLAY FINAL SORTED ARRAY
-    // =====================================================
+
 
     printf("Final Sorted Array: [ ");
 
@@ -139,9 +125,7 @@ int main() {
 
     printf("]\n\n");
 
-    // =====================================================
-    // DISPLAY ANALYSIS RESULTS
-    // =====================================================
+
 
     printf("=== OPERATION STATISTICS ===\n");
 
