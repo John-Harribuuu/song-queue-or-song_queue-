@@ -13,14 +13,14 @@ int main() {
  
     int nums[10];
 
-    int comparisons = 0;   // Counts comparisons made
-    int assignments = 0;   // Counts assignment operations
-    int swaps = 0;         // Counts how many swaps happen
-    int step = 0;          // Counts sorting steps
+    int comparisons = 0;   
+    int assignments = 0;  
+    int swaps = 0;        
+    int step = 0;          
 
  
 
-    // Fill the array with random numbers from 1 to 99
+    
     for (int i = 0; i < n; i++) {
         nums[i] = rand() % 99 + 1;
     }
